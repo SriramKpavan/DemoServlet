@@ -6,17 +6,17 @@
 </head>
 <body>
 <h1> Register </h1>
-<form action="ps">
+<form action="reg" method = "post">
 <div class = "container">
-<label for = "uname"><b>Username</b></label>
+<label for = "name"><b>Name</b></label>
+<input type="text" placeholder = "Enter Fullname" name = "name" required>
+<label for = "num"><b>Phone Number</b></label>
+<input type="text" placeholder = "Enter Your phone number" name = "num" required>
+<label for = "uname"><b>Create UserName</b></label>
 <input type="text" placeholder = "Enter Username" name = "uname" required>
 <label for = "psw"><b>Password</b></label>
 <input type = "password" placeholder="Enter Password" name="psw" required>
-<label for = "psw"><b>Confirm Password</b></label>
-<input type = "password" placeholder="Re-enter Password" name="psw" required>
-<label>
 <button type ="submit">Register</button>
-</label>
 </div>
 </form>
 <button type = "button" onclick = 'location.href = "index.html"'>Back to Login</button>

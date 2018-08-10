@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>DemoServlet</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>Login.html</welcome-file>
   </welcome-file-list>
   <servlet-mapping>
     <servlet-name>User</servlet-name>
@@ -10,20 +10,22 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>User</servlet-name>
-    <servlet-class>com.training.RegisterUser</servlet-class>
+    <servlet-class>com.jda.servlet.LoginServlet</servlet-class>
   </servlet>
-  <servlet><servlet-name>Register</servlet-name>
-  <servlet-class>com.training.Register.User</servlet-class>
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.jda.servlet.RegisterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>Register</servlet-name>
-  <url-pattern>/ps</url-pattern>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/reg</url-pattern>
   </servlet-mapping>
-  <servlet><servlet-name>Home</servlet-name>
-  <servlet-class>com.training.Register.User</servlet-class>
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>com.jda.servlet.HomeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>Home</servlet-name>
-  <url-pattern>/#</url-pattern>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/#</url-pattern>
   </servlet-mapping>
 </web-app>
