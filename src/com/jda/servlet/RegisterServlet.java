@@ -21,7 +21,6 @@ public class RegisterServlet extends HttpServlet {
      */
     public RegisterServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 
@@ -30,22 +29,32 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		User user = new User();
-		user.setName(request.getParameter("name"));
-		user.setNumber(request.getParameter("num"));
-		user.setUname(request.getParameter("uname"));
-		user.setPwd(request.getParameter("psw"));
-		
-		RepoImplementation repo = new RepoImplementation();
-		try {
-			repo.save(user);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String name  = request.getParameter("name");
+		String number = request.getParameter("num");
+		String username = request.getParameter("uname");
+		String password = request.getParameter("psw");
+		String psw1 = request.getParameter("psw1");
+		if((name.equals(null )|| name.trim().isEmpty()) ||(number.equals(null )|| number.trim().isEmpty()) || (username.equals(null ) ||username.trim().isEmpty())  || (password.equals(null ) || password.trim().isEmpty()) || (psw1.equals(null ) || psw1.trim().isEmpty()) ){
+			request.getRequestDispatcher("register.jsp");
+			
 		}
-		//call repo method repo.save(user);
-		
-		response.sendRedirect("Login.html");	
+		else{
+			User user = new User();
+			user.setName(name);
+			user.setNumber(number);
+			user.setUname(username);
+			user.setPwd(password);
+			
+			RepoImplementation repo = new RepoImplementation();
+			try {
+				repo.save(user);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//call repo method repo.save(user);
+			response.sendRedirect("login.jsp");	
+		}
 	}
 
 }

@@ -28,8 +28,8 @@ public class RepoImplementation implements Repo{
           preparedStatement.setString(2, number);
           preparedStatement.setString(3, username);
           preparedStatement.setString(4, password);
-          preparedStatement.addBatch();
-          preparedStatement.executeBatch();
+          //preparedStatement.addBatch();
+          preparedStatement.executeUpdate();
 		}
 		catch(Exception e){
 			throw e;
