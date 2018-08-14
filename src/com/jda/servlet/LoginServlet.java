@@ -31,12 +31,12 @@ public class LoginServlet extends HttpServlet {
 	{
 		String username = request.getParameter("uname");
 		String password = request.getParameter("psw");
-		if((username == null || username.trim().isEmpty()) || (password == null || password.trim().isEmpty())){
+		/*if((username == null || username.trim().isEmpty()) || (password == null || password.trim().isEmpty())){
 			RequestDispatcher req = request.getRequestDispatcher("login.jsp");
 			request.setAttribute("error", "1");
 			req.forward(request, response);
-		}
-		else{
+		}*/
+		//else{
 			RepoImplementation repo = new RepoImplementation();
 			try {
 				if(repo.check(username, password) ){
@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		//}
 		
 	}
 

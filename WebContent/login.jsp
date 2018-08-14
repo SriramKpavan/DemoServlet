@@ -5,10 +5,24 @@
 <head>
 <meta charset="US-ASCII">
 <title>Login</title>
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["login"]["uname"].value;
+    if (x == "") {
+        alert("User name must be filled out");
+        return false;
+    }
+    var y = document.forms["login"]["psw"].value;
+    if (y == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+}
+</script>
 </head>
 <body>
 	<h1>Login</h1>
-	<form action="login" method="post">
+	<form name = "login" action="login" onsubmit="return validateForm()" method="post">
 		<div class="container">
 			<label for="uname"><b>Username</b></label> <input type="text"
 				placeholder="Enter Username" name="uname" required>
@@ -33,6 +47,6 @@
 			</p>
 		</div>
 	</form>
-	<button type="button" onclick='location.href = "Register.jsp"'>Register</button>
+	<button type="button" onclick='location.href = "register.jsp"'>Register</button>
 </body>
 </html>

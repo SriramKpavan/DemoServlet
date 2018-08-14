@@ -34,11 +34,10 @@ public class RegisterServlet extends HttpServlet {
 		String username = request.getParameter("uname");
 		String password = request.getParameter("psw");
 		String psw1 = request.getParameter("psw1");
-		if((name.equals(null )|| name.trim().isEmpty()) ||(number.equals(null )|| number.trim().isEmpty()) || (username.equals(null ) ||username.trim().isEmpty())  || (password.equals(null ) || password.trim().isEmpty()) || (psw1.equals(null ) || psw1.trim().isEmpty()) ){
-			request.getRequestDispatcher("register.jsp");
-			
-		}
-		else{
+		/*if((name.equals(null )|| name.trim().isEmpty()) ||(number.equals(null )|| number.trim().isEmpty()) || (username.equals(null ) ||username.trim().isEmpty())  || (password.equals(null ) || password.trim().isEmpty()) || (psw1.equals(null ) || psw1.trim().isEmpty()) ){
+			request.getRequestDispatcher("register.jsp");	
+		}*/
+		//else{
 			User user = new User();
 			user.setName(name);
 			user.setNumber(number);
@@ -55,6 +54,6 @@ public class RegisterServlet extends HttpServlet {
 			//call repo method repo.save(user);
 			response.sendRedirect("login.jsp");	
 		}
-	}
+	//}
 
 }
